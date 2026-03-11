@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="/xatlas_web.js"></script>
+</head>
+<body>
+  <h1>Test XAtlas Import</h1>
+  <script>
+    console.log('window keys:', Object.keys(window).filter(k => k.toLowerCase().includes('xatlas')));
+    if (typeof XAtlas !== 'undefined') console.log('XAtlas type:', typeof XAtlas);
+    if (typeof xatlasjs !== 'undefined') console.log('xatlasjs type:', typeof xatlasjs);
+  </script>
+</body>
+</html>
