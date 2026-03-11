@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UV Unwrapper - 3D Model Optimization</title>
-    <link rel="stylesheet" href="/style.css">
-  </head>
-  <body>
-    <div id="app">
-      <header>
-        <h1>UV Unwrapper</h1>
-        <p>Upload a GLB model to automatically generate new UV maps</p>
-      </header>
-      
-      <main class="grid-container">
-        <!-- Sidebar / Controls -->
-        <aside class="controls-panel glass-panel">
-          <div id="dropzone" class="dropzone">
-            <div class="drop-text">Drag & Drop .glb file here</div>
-            <input type="file" id="file-input" accept=".glb" class="hidden" />
-            <button id="upload-btn" class="btn primary">Select File</button>
-          </div>
-          
-          <div id="action-panel" class="action-panel hidden">
-            <h3>Model Tools</h3>
-            <div class="model-stats">
-              <span id="vert-count">Vertices: 0</span>
-              <span id="face-count">Faces: 0</span>
-            </div>
-            <button id="unwrap-btn" class="btn primary">Unwrap UVs</button>
-            
-            <div id="progress-container" class="hidden">
-              <div class="progress-bar-bg">
-                <div id="progress-bar" class="progress-bar-fill"></div>
-              </div>
-              <span id="progress-text">Processing...</span>
-            </div>
 
-            <div id="view-toggles" class="hidden">
-              <h4>View Mode</h4>
-              <div class="toggle-group">
-                <button id="view-original-btn" class="btn toggle active">Original</button>
-                <button id="view-unwrapped-btn" class="btn toggle">Unwrapped w/ Checker</button>
-              </div>
-              <button id="export-btn" class="btn success mt-4">Export GLB</button>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UV Unwrapper - 3D Model Optimization</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <h1>UV Unwrapper</h1>
+      <p>Upload a GLB model to automatically generate new UV maps</p>
+    </header>
+
+    <main class="grid-container">
+      <!-- Sidebar / Controls -->
+      <aside class="controls-panel glass-panel">
+        <div id="dropzone" class="dropzone">
+          <div class="drop-text">Drag & Drop .glb file here</div>
+          <input type="file" id="file-input" accept=".glb" class="hidden" />
+          <button id="upload-btn" class="btn primary">Select File</button>
+        </div>
+
+        <div id="action-panel" class="action-panel hidden">
+          <h3>Model Tools</h3>
+          <div class="model-stats">
+            <span id="vert-count">Vertices: 0</span>
+            <span id="face-count">Faces: 0</span>
           </div>
-        </aside>
-        
-        <!-- 3D Viewer Area -->
-        <section class="viewer-panel">
-          <div id="canvas-container"></div>
-          <div id="viewer-overlay" class="overlay">No Model Loaded</div>
-        </section>
-      </main>
-    </div>
-    <script src="/xatlas_web.js"></script>
-    <script type="module" src="/main.js"></script>
-  </body>
+          <button id="unwrap-btn" class="btn primary">Unwrap UVs</button>
+
+          <div id="progress-container" class="hidden">
+            <div class="progress-bar-bg">
+              <div id="progress-bar" class="progress-bar-fill"></div>
+            </div>
+            <span id="progress-text">Processing...</span>
+          </div>
+
+          <div id="view-toggles" class="hidden">
+            <h4>View Mode</h4>
+            <div class="toggle-group">
+              <button id="view-original-btn" class="btn toggle active">Original</button>
+              <button id="view-unwrapped-btn" class="btn toggle">Unwrapped w/ Checker</button>
+            </div>
+            <button id="export-btn" class="btn success mt-4">Export GLB</button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- 3D Viewer Area -->
+      <section class="viewer-panel">
+        <div id="canvas-container"></div>
+        <div id="viewer-overlay" class="overlay">No Model Loaded</div>
+      </section>
+    </main>
+  </div>
+  <script src="./xatlas_web.js"></script>
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>
